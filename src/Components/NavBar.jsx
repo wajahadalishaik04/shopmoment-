@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 import { FaHandSparkles } from "react-icons/fa6";
@@ -6,11 +6,14 @@ import { VscAccount } from "react-icons/vsc";
 import { IoCartOutline } from "react-icons/io5";
 
 
+
 const NavBar = ()  =>
     {
+        
+        
         return(
             <>
-            <div className="w-full p-3 px-4 border-b-2 border-slate-200 text-base flex items-center justify-between flex-wrap   font-serif ">   
+            <div className="w-full p-3 px-4 border-b-2 bg-white shadow-md   border-slate-200 text-base flex items-center justify-between flex-wrap   font-serif ">   
              <div className="flex items-center justify-center" >
               <span className="md:hidden mr-4"><RxHamburgerMenu  fontSize={40} /></span>
                 <img  className="w-12 h-12 "   src="moment-seeklogo.svg" alt="moment-logo" />
@@ -27,6 +30,7 @@ const NavBar = ()  =>
                 <FaHandSparkles/>
                 <VscAccount/>
                 <IoCartOutline/>
+               
              </div>
                 
             </div>

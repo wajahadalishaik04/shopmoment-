@@ -10,12 +10,12 @@ const HomeScreen = () =>
         const productCardApiData =async () =>
          {
             const data = await axios.get("https://dummyjson.com/products");
-            console.log(data.data.products);
+            // console.log(data.data.products);
             setData(data.data.products);
          }  
          useEffect(()=>{
              productCardApiData();
-         })     
+         },[ ])     
 
     //    rendering the productcard data by through props
   
@@ -44,7 +44,10 @@ const HomeScreen = () =>
        
         return(
             <>
-            <NavBar/>
+            <div className="fixed w-full">
+           <NavBar/>
+           </div>
+            
             {/* main screen conatiner */}
             <div className="w-full h-screen font-serif">
              <HeroImage image={heroimagedata.image} title={heroimagedata.title} description={heroimagedata.description} btn={heroimagedata.btn}/>
@@ -54,7 +57,7 @@ const HomeScreen = () =>
                 <button className="text-right text-xl text-white p-2 rounded-full bg-slate-700 hover:bg-slate-800">Shop All</button>
                 </div>
                 {/* product cards */}
-                <div className=" w-full flex gap-2 flex-wrap justify-evenly    px-5 " >
+                <div className=" w-full flex gap-2  flex-wrap justify-evenly    px-5 " >
                    <div className="w-[90%] flex gap-2 flex-wrap">
                    
                    {data.slice(0,8).map((e)=><ProductCard thumbnail={e.thumbnail} title={e.title} stock={e.stock} description={e.description}price={e.price}btn={e.btn}  />)}

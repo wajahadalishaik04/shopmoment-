@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 const ProductCard = ({thumbnail,title,stock,description,price}) =>
     {
+        const [cartCounter,setCartCounter] = useState(0) ;
+        const [showCartCounter, setShowCartCounter] = useState(false);
+        const handleCartBtn = () =>
+            {
+                setCartCounter(cartCounter+1);
+                setShowCartCounter(true);
+            }
       
         return (
             
@@ -15,7 +23,9 @@ const ProductCard = ({thumbnail,title,stock,description,price}) =>
                     <span className='text-lg font-normal  px-4'>{"price: $"+price}</span><br></br>
                     
                 </div>
-                <button className='bg-blue-400 p-2  mt-3 ml-2  text-slate-50 rounded-xl'  >ADD TO CART</button>
+                <button onClick={handleCartBtn}   className='bg-blue-500 p-2  mt-3 ml-2 hover:bg-blue-600 text-slate-50 rounded-xl'  >ADD TO CART</button>
+                {showCartCounter && <span className='ml-3 p-3 rounded-full text-lg shadow-md'>{cartCounter}</span>}
+               
             </div>
             </>
         )
