@@ -6,7 +6,8 @@ import axios from "axios";
 import Footer from "../Components/Footer";
 const HomeScreen = () => {
   const [data, setData] = useState([]);
-  const [count,setCount] = useState(0)
+   const[cartCount,SetCartCount] = useState(0)
+   const [heroCount,SetHeroCount]= useState(0)
   const productCardApiData = async () => {
     const data = await axios.get("https://dummyjson.com/products");
     // console.log(data.data.products);
@@ -43,7 +44,7 @@ const HomeScreen = () => {
   return (
     <>
       <div className="fixed top-0 z-50 w-full">
-        <NavBar count={count} />
+        <NavBar cartCount={cartCount} heroCount={heroCount}  />
       </div>
 
       {/* main screen conatiner */}
@@ -53,6 +54,8 @@ const HomeScreen = () => {
           title={heroimagedata.title}
           description={heroimagedata.description}
           btn={heroimagedata.btn}
+          SetHeroCount={SetHeroCount}
+          
         />
         {/* best seller bar */}
         <div className="p-7 mt-4 text-4xl flex justify-between font-serif font-medium ">
@@ -72,7 +75,8 @@ const HomeScreen = () => {
                 description={e.description}
                 price={e.price}
                 btn={e.btn}
-                setCount={setCount}
+                SetCartCount={SetCartCount}
+                
               />
             ))}
           </div>
@@ -82,6 +86,7 @@ const HomeScreen = () => {
           title={secondherodata.title}
           description={secondherodata.description}
           btn={secondherodata.btn}
+          SetHeroCount={SetHeroCount}
         />
         <div className="my-8 px-10 font-serif ">
           <h2 className="text-4xl font-semibold p-4">
@@ -102,6 +107,7 @@ const HomeScreen = () => {
               description={e.description}
               price={e.price}
               btn={e.btn}
+              SetCartCount={SetCartCount}
             />
           ))}
         </div>
@@ -122,6 +128,7 @@ const HomeScreen = () => {
               stock={e.stock}
               price={e.price}
               btn={e.btn}
+              SetCartCount={SetCartCount}
             />
           ))}
         </div>
@@ -141,7 +148,7 @@ const HomeScreen = () => {
               type="email"
               placeholder="Enter Email:"
             />
-            <button className="p-4 border-2 border-solid border-slate-500 hover:bg-slate-500 rounded-3xl">
+            <button  className="p-4 border-2 border-solid border-slate-500 hover:bg-slate-500 rounded-3xl">
               SIGN UP
             </button>
           </div>
@@ -152,6 +159,7 @@ const HomeScreen = () => {
             title={thirdHeroImage.title}
             description={thirdHeroImage.description}
             btn={thirdHeroImage.btn}
+            SetHeroCount={SetHeroCount}
           />
         </div>
         <Footer />

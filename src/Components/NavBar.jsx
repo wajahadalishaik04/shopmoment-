@@ -5,7 +5,7 @@ import { FaHandSparkles } from "react-icons/fa6";
 import { VscAccount } from "react-icons/vsc";
 import { IoCartOutline } from "react-icons/io5";
 
-const NavBar = ({count}) => {
+const NavBar = ({cartCount,heroCount}) => {
   return (
     <>
       <div className="w-full p-3 px-4 border-b-2 bg-white shadow-md   border-slate-200 text-base flex items-center justify-between flex-wrap   font-serif ">
@@ -29,15 +29,16 @@ const NavBar = ({count}) => {
         <div className="flex items-center justify-between p-2 text-2xl gap-5">
           <CiSearch />
           <FaHandSparkles />
+          <div className="relative">
+          <span className="bg-blue-400  text-white rounded-full   ml-1 px-1">{heroCount}</span>
           <VscAccount />
+          </div>
 
           <div className="relative">
-            <span className="bg-red-600 text-white text-[10px] right-[-10px] rounded-full size-5 flex justify-center items-center absolute top-[-12px]">
-                {count}
-
-            </span>
+            <span className="bg-blue-500 rounded-full   text-white ml-1 px-1">{cartCount}</span>
             <IoCartOutline />
           </div>
+          
         </div>
       </div>
     </>

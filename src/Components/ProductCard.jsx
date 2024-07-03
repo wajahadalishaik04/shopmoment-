@@ -6,15 +6,14 @@ const ProductCard = ({
   stock,
   description,
   price,
-  setCount,
+  SetCartCount
 }) => {
-  const [cartCounter, setCartCounter] = useState(0);
-  const [showCartCounter, setShowCartCounter] = useState(false);
+  
   const handleCartBtn = () => {
-    setCount((prev) => prev + 1);
+    SetCartCount((val1)=>val1+1);
   };
 
-  return (
+  return (  
     <>
       <div className=" w-80 m-2   p-2 font-serif rounded-2xl shadow-lg bg-slate-200 ">
         <span className=" my-2 p-1 bg-blue-500 rounded-xl text-white">
@@ -35,17 +34,14 @@ const ProductCard = ({
           </span>
           <br></br>
         </div>
-        <button
-          onClick={handleCartBtn}
-          className="bg-blue-500 p-2  mt-3 ml-2 hover:bg-blue-600 text-slate-50 rounded-xl"
-        >
+        <button onClick={handleCartBtn}
+          
+          className="bg-blue-500 p-2  mt-3 ml-2 hover:bg-blue-600 text-slate-50 rounded-xl" >
           ADD TO CART
         </button>
-        {showCartCounter && (
-          <span className="ml-3 p-3 rounded-full text-lg shadow-md">
-            {cartCounter}
-          </span>
-        )}
+
+       
+                  
       </div>
     </>
   );
