@@ -1,11 +1,14 @@
 import React from 'react';
 import { breakText } from '../../Prac';
-const HeroImage = ({image,title,description,btn,SetHeroCount}) =>
+import { useDispatch } from 'react-redux';
+const HeroImage = ({image,title,description,btn}) =>
     {
-        const handleHeroEvent= ()=>
-            {
-                SetHeroCount(((val)=>val+1))
-            }
+        const dispatch = useDispatch();
+        const handleHeroEvent = () =>
+        {
+
+            dispatch({type:"increaseCount"});
+        }
         return (
             <>
             <div className=' w-full h-5/6 relative  mt-20 px-12 font-serif text-white' >

@@ -4,8 +4,14 @@ import { CiSearch } from "react-icons/ci";
 import { FaHandSparkles } from "react-icons/fa6";
 import { VscAccount } from "react-icons/vsc";
 import { IoCartOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
-const NavBar = ({cartCount,heroCount}) => {
+
+
+const NavBar = () => {
+  const {count} = useSelector((e)=>e.productReducer);
+  const {bannerCount} = useSelector((e)=>e.heroBannerCount)
+  
   return (
     <>
       <div className="w-full p-3 px-4 border-b-2 bg-white shadow-md   border-slate-200 text-base flex items-center justify-between flex-wrap   font-serif ">
@@ -30,12 +36,12 @@ const NavBar = ({cartCount,heroCount}) => {
           <CiSearch />
           <FaHandSparkles />
           <div className="relative">
-          <span className="bg-blue-400  text-white rounded-full   ml-1 px-1">{heroCount}</span>
+          <span className="bg-blue-400  text-white rounded-full text-lg  ml-1 px-1">{bannerCount}</span>
           <VscAccount />
           </div>
 
           <div className="relative">
-            <span className="bg-blue-500 rounded-full   text-white ml-1 px-1">{cartCount}</span>
+            <span className="bg-blue-500 rounded-full text-lg   text-white ml-1 px-1">{count}</span>
             <IoCartOutline />
           </div>
           

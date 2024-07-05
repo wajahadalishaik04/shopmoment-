@@ -75,7 +75,7 @@ const HomeScreen = () => {
                 description={e.description}
                 price={e.price}
                 btn={e.btn}
-                SetCartCount={SetCartCount}
+                
                 
               />
             ))}
@@ -86,7 +86,7 @@ const HomeScreen = () => {
           title={secondherodata.title}
           description={secondherodata.description}
           btn={secondherodata.btn}
-          SetHeroCount={SetHeroCount}
+          
         />
         <div className="my-8 px-10 font-serif ">
           <h2 className="text-4xl font-semibold p-4">

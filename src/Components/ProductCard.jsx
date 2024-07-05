@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const ProductCard = ({
   thumbnail,
@@ -8,9 +9,9 @@ const ProductCard = ({
   price,
   SetCartCount
 }) => {
-  
+  const dispatch = useDispatch()
   const handleCartBtn = () => {
-    SetCartCount((val1)=>val1+1);
+    dispatch({type:"incrementCount"});
   };
 
   return (  
