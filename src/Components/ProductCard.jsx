@@ -35,7 +35,7 @@ const ProductCard = ({
           </span>
           <br></br>
         </div>
-        <button onClick={handleCartBtn}
+        <button onClick={ handleCartBtn}
           
           className="bg-blue-500 p-2  mt-3 ml-2 hover:bg-blue-600 text-slate-50 rounded-xl" >
           ADD TO CART

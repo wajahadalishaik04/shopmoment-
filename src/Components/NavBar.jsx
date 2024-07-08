@@ -5,6 +5,7 @@ import { FaHandSparkles } from "react-icons/fa6";
 import { VscAccount } from "react-icons/vsc";
 import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,11 +27,11 @@ const NavBar = () => {
           />
         </div>
         <div className="list-none sm:hidden md:flex p-2  flex items-center font-medium justify-between gap-6">
-          <li>Deals</li>
-          <li>Gear</li>
-          <li>Courses</li>
-          <li>Luts & Presets</li>
-          <li>Editorial</li>
+          <Link className="hover:bg-slate-200 hover:rounded-full" to='/Users'>Users</Link>
+          <Link className="hover:bg-slate-200 hover:rounded-full" to="/products"> Products</Link>
+          <Link className="hover:bg-slate-200 hover:rounded-full" to="/courses">Courses</Link>
+          <Link className="hover:bg-slate-200 hover:rounded-full" to="/Luts & Presets">Luts & Presets</Link>
+          <Link className="hover:bg-slate-200 hover:rounded-full" to="/Editorial">Editorial</Link>
         </div>
         <div className="flex items-center justify-between p-2 text-2xl gap-5">
           <CiSearch />

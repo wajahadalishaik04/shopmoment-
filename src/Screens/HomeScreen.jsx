@@ -44,7 +44,7 @@ const HomeScreen = () => {
   return (
     <>
       <div className="fixed top-0 z-50 w-full">
-        <NavBar cartCount={cartCount} heroCount={heroCount}  />
+        <NavBar  />
       </div>
 
       {/* main screen conatiner */}
@@ -54,7 +54,7 @@ const HomeScreen = () => {
           title={heroimagedata.title}
           description={heroimagedata.description}
           btn={heroimagedata.btn}
-          SetHeroCount={SetHeroCount}
+          
           
         />
         {/* best seller bar */}
@@ -107,8 +107,7 @@ const HomeScreen = () => {
               description={e.description}
               price={e.price}
               btn={e.btn}
-              SetCartCount={SetCartCount}
-            />
+                          />
           ))}
         </div>
         <div className="font-serif px-10 my-8 ">
@@ -128,7 +127,7 @@ const HomeScreen = () => {
               stock={e.stock}
               price={e.price}
               btn={e.btn}
-              SetCartCount={SetCartCount}
+              
             />
           ))}
         </div>
@@ -159,7 +158,7 @@ const HomeScreen = () => {
             title={thirdHeroImage.title}
             description={thirdHeroImage.description}
             btn={thirdHeroImage.btn}
-            SetHeroCount={SetHeroCount}
+           
           />
         </div>
         <Footer />

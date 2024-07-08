@@ -11,7 +11,7 @@ import heroImageStore from './store/StoreFile.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={Store } heroImageStore={heroImageStore}  >
+    <Provider store={Store }   >
       <App />
     </Provider>
       </React.StrictMode>
