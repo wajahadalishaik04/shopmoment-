@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { heroBannerCount,  productReducer } from "./ReducerFile";
+import { heroBannerCount, productReducer, usersReducers } from "./ReducerFile";
 
 const Store = configureStore({
-    reducer:{productReducer, heroBannerCount}
+  reducer: { productReducer, heroBannerCount, usersReducers },
 });
 export default Store;

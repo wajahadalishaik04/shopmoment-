@@ -1,45 +1,55 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import UserProductCard from '../Components/UserProductCard';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import UserProductCard from "../Components/UserProductCard";
+import { useDispatch, useSelector } from "react-redux";
 
-const UserScreen = () => 
-    {
-    const [userdata,setUserData] = useState([]);
-    
-   const getUserApiData = async () =>
-    {
-       const userdata = await axios.get("https://dummyjson.com/users");
+const UserScreen = () => {
+  const dispatch = useDispatch();
+  const { users } = useSelector((e) => e.usersReducers);
 
-      const companyName = userdata.data.company.name
-      const jobrole = userdata.data.company.title
-      const companyAddress = userdata.data.company.address
-      const city = userdata.data.company.city
-      const state = userdata.data.company.state
-
-        ( setUserData(userdata.data.users));
-        
+  const getUserApiData = async () => {
+    const { data } = await axios.get("https://dummyjson.com/users");
+    dispatch({ type: "addUsers", payload: data.users });
+  };
+  useEffect(() => {
+    if (!users.length) {
+      getUserApiData();
     }
-    useEffect(()=>{
-        getUserApiData();
-    },[])
+  }, [users]);
 
   return (
     <>
-    <div>
-   {userdata.map((e)=><UserProductCard key={e.id}image={e.image} firstName={e.firstName} lastName={e.lastName} jobrole={e.jobrole} companyName={e.companyName} companyAddress= {e.companyAddress}city={e.city} state={e.state} phone={e.phone}email={e.email}university={e.university} />)}
-    </div>
-    <div>
-    <div>
-  {Object.keys(company).map((key, index) => (
-    <div key={index}>{key}: {company[key]}</div>
-  ))}
-</div>
-    </div>
-     
-    <div>hello</div>
+      <div>
+        {users.map((e) => (
+          <UserProductCard
+            key={e.id}
+            image={e.image}
+            firstName={e.firstName}
+            lastName={e.lastName}
+            jobrole={e.jobrole}
+            companyName={e.company.name}
+            companyAddress={e.company.address.city}
+            city={e.company.address.city}
+            state={e.company.address.state}
+            phone={e.phone}
+            email={e.email}
+            university={e.university}
+          />
+        ))}
+      </div>
+      <div>
+        <div>
+          {/* {Object.keys(company).map((key, index) => (
+            <div key={index}>
+              {key}: {company[key]}
+            </div>
+          ))} */}
+        </div>
+      </div>
 
+      <div>hello</div>
     </>
-  )
-}
+  );
+};
 
-export default UserScreen
+export default UserScreen;
