@@ -7,5 +7,4 @@ export const breakText = (str) => {
     }
     return [str]
   }
-
-  
+    

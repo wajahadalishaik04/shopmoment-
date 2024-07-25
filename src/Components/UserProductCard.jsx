@@ -14,7 +14,7 @@ const UserProductCard = ({
   university,
 }) => {
   return (
-    <div className=" bg-slate-300 rounded-3xl font-serif  shadow-md ">
+    <div className="  bg-slate-300 rounded-3xl font-serif  shadow-md ">
       <div>
         <img src={image} alt="image" />
       </div>
@@ -22,7 +22,7 @@ const UserProductCard = ({
         <div className="mr-1">{firstName}</div>
         <div>{lastName}</div>
       </div>
-      <div>
+      <div className="flex gap-1 ">
         <div>{jobrole}</div>
         <div>{companyName}</div>
       </div>

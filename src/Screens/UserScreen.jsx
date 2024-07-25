@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import UserProductCard from "../Components/UserProductCard";
 import { useDispatch, useSelector } from "react-redux";
+import NavBar from "../Components/NavBar";
 
 const UserScreen = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const UserScreen = () => {
 
   return (
     <>
+    <NavBar/>
       <div>
         {users.map((e) => (
           <UserProductCard
@@ -26,7 +28,7 @@ const UserScreen = () => {
             image={e.image}
             firstName={e.firstName}
             lastName={e.lastName}
-            jobrole={e.jobrole}
+            jobrole={e.company.title}
             companyName={e.company.name}
             companyAddress={e.company.address.city}
             city={e.company.address.city}
@@ -37,15 +39,7 @@ const UserScreen = () => {
           />
         ))}
       </div>
-      <div>
-        <div>
-          {/* {Object.keys(company).map((key, index) => (
-            <div key={index}>
-              {key}: {company[key]}
-            </div>
-          ))} */}
-        </div>
-      </div>
+       
 
       <div>hello</div>
     </>

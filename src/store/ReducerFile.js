@@ -16,3 +16,10 @@ export const usersReducers = createReducer({ users: [] }, (builder) => {
     state.users = action.payload;
   });
 });
+export const ProductsCardReducer = createReducer({products:[]},(builder)=>
+{
+  builder.addCase("addProducts",(state,action)=>
+  {
+    state.products=action.payload;
+  })
+})

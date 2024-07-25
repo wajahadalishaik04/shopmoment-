@@ -3,12 +3,15 @@ import HomeScreen from './Screens/HomeScreen';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserScreen from './Screens/UserScreen';
 import ProductScreen from './Screens/ProductScreen';
+import NavBar from './Components/NavBar';
+
 const App = () =>
   {
     return(
       <>
 
       <BrowserRouter>
+      
       <Routes>
         
         <Route  path='/' element={<HomeScreen/>}/>
